@@ -1,14 +1,16 @@
 FROM ubuntu:22.04
 WORKDIR /build
 
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt update
+RUN apt install -y git
+
 RUN git clone https://github.com/johnboiles/aiortc.git
 
 WORKDIR /build/aiortc
 
 RUN git checkout octoprint-webrtc-support
 
-ENV DEBIAN_FRONTEND=noninteractive
-RUN apt update
 RUN apt install -y python3-venv libavdevice-dev libavfilter-dev libopus-dev libvpx-dev pkg-config libsrtp2-dev python3 python3-dev python3-setuptools python3-pip
 
 RUN pip3 install --upgrade pip
