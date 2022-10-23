@@ -16,9 +16,9 @@ RUN pip3 install aiohttp crc32c
 RUN pip3 install .
 
 WORKDIR /build/aiortc/examples/webcam
-COPY index.html --chown=1000:1000 .
-COPY webcam.py --chown=1000:1000 .
-COPY client.js --chown=1000:1000 .
+COPY --chown=1000:1000 index.html ./
+COPY --chown=1000:1000 webcam.py ./
+COPY --chown=1000:1000 client.js ./
 
 ENV VIDEO_DEVICE=/dev/video0
 ENV VIDEO_PREF_CODEC=video/H264
