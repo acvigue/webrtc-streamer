@@ -11,7 +11,7 @@ WORKDIR /build/aiortc
 
 RUN git checkout octoprint-webrtc-support
 
-RUN apt install -y python3-venv libavdevice-dev libavfilter-dev libopus-dev libvpx-dev pkg-config libsrtp2-dev python3 python3-dev python3-setuptools python3-pip
+RUN apt install -y python3-venv libavdevice-dev libavfilter-dev libopus-dev libvpx-dev pkg-config libsrtp2-dev python3 python3-dev python3-setuptools python3-pip libffi-dev
 
 RUN pip3 install --upgrade pip
 RUN pip3 install aiohttp crc32c
